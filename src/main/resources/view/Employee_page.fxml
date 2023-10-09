@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EmployeePageController">
+   <children>
+      <ImageView fitHeight="618.0" fitWidth="900.0" layoutY="-1.0">
+         <image>
+            <Image url="@../img/Employee_Page.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#9dffff" height="472.0" layoutX="247.0" layoutY="88.0" opacity="0.76" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0" width="591.0" />
+      <JFXButton fx:id="btnOrd" buttonType="RAISED" layoutX="289.0" layoutY="121.0" onAction="#btnOrdOnActon" prefHeight="38.0" prefWidth="130.0" ripplerFill="#bd00ff" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Orders" textFill="#505050">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <effect>
+            <Shadow>
+               <color>
+                  <Color red="0.7411764860153198" blue="1.0" />
+               </color>
+            </Shadow>
+         </effect>
+      </JFXButton>
+      <JFXButton fx:id="btnItem" buttonType="RAISED" layoutX="289.0" layoutY="179.0" onAction="#btnItemOnActon" prefHeight="38.0" prefWidth="130.0" ripplerFill="#bd00ff" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Item" textFill="#505050">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <effect>
+            <Shadow>
+               <color>
+                  <Color red="0.7411764860153198" blue="1.0" />
+               </color>
+            </Shadow>
+         </effect>
+      </JFXButton>
+      <JFXButton fx:id="btnEmployee" buttonType="RAISED" layoutX="289.0" layoutY="240.0" onAction="#btnEmployeeOnActon" prefHeight="38.0" prefWidth="130.0" ripplerFill="#bd00ff" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Employee" textFill="#505050">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <effect>
+            <Shadow>
+               <color>
+                  <Color red="0.7411764860153198" blue="1.0" />
+               </color>
+            </Shadow>
+         </effect>
+      </JFXButton>
+      <JFXButton fx:id="btnSupplier" buttonType="RAISED" layoutX="289.0" layoutY="305.0" onAction="#btnSupplierOnActon" prefHeight="38.0" prefWidth="130.0" ripplerFill="#bd00ff" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Suppliers" textFill="#505050">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <effect>
+            <Shadow>
+               <color>
+                  <Color red="0.7411764860153198" blue="1.0" />
+               </color>
+            </Shadow>
+         </effect>
+      </JFXButton>
+      <JFXButton fx:id="btnOrderDetails" buttonType="RAISED" layoutX="289.0" layoutY="369.0" onAction="#btnOrderDetailsOnActon" prefHeight="38.0" prefWidth="130.0" ripplerFill="#bd00ff" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Orders Details" textFill="#505050">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <effect>
+            <Shadow>
+               <color>
+                  <Color red="0.7411764860153198" blue="1.0" />
+               </color>
+            </Shadow>
+         </effect>
+      </JFXButton>
+      <JFXButton fx:id="btnReturnSales" buttonType="RAISED" layoutX="289.0" layoutY="430.0" onAction="#btnReturnSalesOnActon" prefHeight="38.0" prefWidth="130.0" ripplerFill="#bd00ff" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Return Sales" textFill="#505050">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <effect>
+            <Shadow>
+               <color>
+                  <Color red="0.7411764860153198" blue="1.0" />
+               </color>
+            </Shadow>
+         </effect>
+      </JFXButton>
+      <JFXButton fx:id="btnLogOut" buttonType="RAISED" layoutX="745.0" layoutY="102.0" onAction="#btnLogOutOnAction" prefHeight="24.0" prefWidth="74.0" ripplerFill="WHITE" style="-fx-background-color: #862121; -fx-background-radius: 20;" text="Log Out" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="9.0" />
+         </font>
+         <effect>
+            <Shadow>
+               <color>
+                  <Color red="0.7411764860153198" blue="1.0" />
+               </color>
+            </Shadow>
+         </effect>
+      </JFXButton>
+   </children>
+</AnchorPane>
