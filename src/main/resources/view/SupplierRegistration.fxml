@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SupplierRegistrationController">
+   <children>
+      <ImageView fitHeight="602.0" fitWidth="900.0" layoutY="-1.0">
+         <image>
+            <Image url="@../img/Supplier_Registration.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#9dffff" height="474.0" layoutX="45.0" layoutY="90.0" opacity="0.76" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0" width="811.0" />
+      <Label layoutX="69.0" layoutY="165.0" text="Supplier ID :" textFill="#505050">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="314.0" layoutY="108.0" text="Supplier Registration" textFill="#505050">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="69.0" layoutY="201.0" text="Title :" textFill="#505050">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="69.0" layoutY="239.0" text="Supplier Name :" textFill="#505050">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtSupplierName" layoutX="191.0" layoutY="234.0" prefHeight="26.0" prefWidth="170.0" unFocusColor="WHITE" />
+      <Label layoutX="420.0" layoutY="160.0" text="Email :" textFill="#505050">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtSupplierEmail" layoutX="542.0" layoutY="155.0" prefHeight="26.0" prefWidth="170.0" unFocusColor="WHITE" />
+      <Label layoutX="420.0" layoutY="196.0" text="Company :" textFill="#505050">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtSupplierCompany" layoutX="542.0" layoutY="191.0" prefHeight="26.0" prefWidth="170.0" unFocusColor="WHITE" />
+      <JFXTreeTableView layoutX="68.0" layoutY="315.0" prefHeight="224.0" prefWidth="762.0" />
+      <Label layoutX="69.0" layoutY="278.0" text="Search :" textFill="#505050">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtSupplierSearch" layoutX="191.0" layoutY="273.0" prefHeight="26.0" prefWidth="170.0" unFocusColor="WHITE" />
+      <JFXButton fx:id="btnSearch" buttonType="RAISED" layoutX="400.0" layoutY="273.0" onAction="#btnSearchOnAction" prefHeight="26.0" prefWidth="70.0" ripplerFill="WHITE" style="-fx-background-color: #BF8E10;" text="Search" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnClear" buttonType="RAISED" layoutX="484.0" layoutY="273.0" onAction="#btnClearOnAction" prefHeight="26.0" prefWidth="70.0" ripplerFill="WHITE" style="-fx-background-color: #1080BF;" text="Clear" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnSave" buttonType="RAISED" layoutX="568.0" layoutY="273.0" onAction="#btnSaveOnAction" prefHeight="26.0" prefWidth="70.0" ripplerFill="WHITE" style="-fx-background-color: #29BF10;" text="Save" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="653.0" layoutY="273.0" onAction="#btnDeleteOnAction" prefHeight="26.0" prefWidth="70.0" ripplerFill="WHITE" style="-fx-background-color: #BF1064;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnPrint" buttonType="RAISED" layoutX="758.0" layoutY="273.0" onAction="#btnPrintOnAction" prefHeight="26.0" prefWidth="70.0" ripplerFill="WHITE" style="-fx-background-color: #BCBF10;" text="Print" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <Label fx:id="lblSupplierID" layoutX="191.0" layoutY="160.0" prefHeight="26.0" prefWidth="99.0" text="S001" />
+      <JFXComboBox fx:id="cmbSupplierTitle" layoutX="185.0" layoutY="192.0" prefHeight="26.0" prefWidth="82.0" />
+      <JFXButton fx:id="btnBack" buttonType="RAISED" layoutX="745.0" layoutY="102.0" onAction="#btnBackOnAction" prefHeight="24.0" prefWidth="74.0" ripplerFill="WHITE" style="-fx-background-color: #A710BF; -fx-background-radius: 20;" text="Back" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="9.0" />
+         </font>
+         <effect>
+            <Shadow>
+               <color>
+                  <Color red="0.7411764860153198" blue="1.0" />
+               </color>
+            </Shadow>
+         </effect>
+      </JFXButton>
+   </children>
+</AnchorPane>
