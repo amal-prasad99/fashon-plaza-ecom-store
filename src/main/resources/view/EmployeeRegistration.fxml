@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EmployeeRegistrationController">
+   <children>
+      <ImageView fitHeight="602.0" fitWidth="900.0" layoutY="-1.0">
+         <image>
+            <Image url="@../img/Employee_Registration.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#9dffff" height="502.0" layoutX="48.0" layoutY="82.0" opacity="0.76" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0" width="811.0" />
+      <Label layoutX="72.0" layoutY="142.0" text="Employee ID :" textFill="#505050">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="305.0" layoutY="85.0" text="Employee Registration" textFill="#505050">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="72.0" layoutY="169.0" text="Title :" textFill="#505050">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="72.0" layoutY="199.0" text="First Name :" textFill="#505050">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtEmployeeFirstName" layoutX="194.0" layoutY="194.0" prefHeight="26.0" prefWidth="170.0" unFocusColor="WHITE" />
+      <Label layoutX="423.0" layoutY="148.0" text="DoB :" textFill="#505050">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="423.0" layoutY="177.0" text="Email :" textFill="#505050">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtEmployeeEmail" layoutX="545.0" layoutY="172.0" prefHeight="26.0" prefWidth="170.0" unFocusColor="WHITE" />
+      <JFXTreeTableView layoutX="71.0" layoutY="335.0" prefHeight="224.0" prefWidth="762.0" />
+      <Label layoutX="72.0" layoutY="298.0" text="Search :" textFill="#505050">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtEmployeeSearch" layoutX="194.0" layoutY="293.0" prefHeight="26.0" prefWidth="170.0" unFocusColor="WHITE" />
+      <JFXButton fx:id="btnSearch" buttonType="RAISED" layoutX="403.0" layoutY="301.0" onAction="#btnSearchOnAction" prefHeight="26.0" prefWidth="70.0" ripplerFill="WHITE" style="-fx-background-color: #BF8E10;" text="Search" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnClear" buttonType="RAISED" layoutX="487.0" layoutY="301.0" onAction="#btnClearOnAction" prefHeight="26.0" prefWidth="70.0" ripplerFill="WHITE" style="-fx-background-color: #1080BF;" text="Clear" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnSave" buttonType="RAISED" layoutX="571.0" layoutY="301.0" onAction="#btnSaveOnAction" prefHeight="26.0" prefWidth="70.0" ripplerFill="WHITE" style="-fx-background-color: #29BF10;" text="Save" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="656.0" layoutY="301.0" onAction="#btnDeleteOnAction" prefHeight="26.0" prefWidth="70.0" ripplerFill="WHITE" style="-fx-background-color: #BF1064;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnPrint" buttonType="RAISED" layoutX="761.0" layoutY="301.0" onAction="#btnPrintOnAction" prefHeight="26.0" prefWidth="70.0" ripplerFill="WHITE" style="-fx-background-color: #BCBF10;" text="Print" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXComboBox fx:id="cmbTitle" layoutX="196.0" layoutY="164.0" prefHeight="26.0" prefWidth="82.0" />
+      <JFXButton fx:id="btnBack" buttonType="RAISED" layoutX="748.0" layoutY="94.0" onAction="#btnBackOnAction" prefHeight="24.0" prefWidth="74.0" ripplerFill="WHITE" style="-fx-background-color: #A710BF; -fx-background-radius: 20;" text="Back" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="9.0" />
+         </font>
+         <effect>
+            <Shadow>
+               <color>
+                  <Color red="0.7411764860153198" blue="1.0" />
+               </color>
+            </Shadow>
+         </effect>
+      </JFXButton>
+      <Label layoutX="72.0" layoutY="231.0" text="Last Name :" textFill="#505050">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtEmployeeLastName" layoutX="194.0" layoutY="226.0" prefHeight="26.0" prefWidth="170.0" unFocusColor="WHITE" />
+      <Label layoutX="71.0" layoutY="261.0" text="Address :" textFill="#505050">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtEmployeeAddress" layoutX="193.0" layoutY="256.0" prefHeight="26.0" prefWidth="170.0" unFocusColor="WHITE" />
+      <Label layoutX="424.0" layoutY="207.0" text="Account No :" textFill="#505050">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtEmployeeAccountNo" layoutX="546.0" layoutY="202.0" prefHeight="26.0" prefWidth="170.0" unFocusColor="WHITE" />
+      <Label layoutX="424.0" layoutY="235.0" text="Branch Name :" textFill="#505050">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtEmployeeBranchName" layoutX="546.0" layoutY="230.0" prefHeight="26.0" prefWidth="170.0" unFocusColor="WHITE" />
+      <Label layoutX="425.0" layoutY="263.0" text="NIC :" textFill="#505050">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtEmployeeNIC" layoutX="547.0" layoutY="258.0" prefHeight="26.0" prefWidth="170.0" unFocusColor="WHITE" />
+      <DatePicker fx:id="DatePickerEmployeeDoB" layoutX="545.0" layoutY="144.0" />
+      <JFXComboBox fx:id="cmbEmployeeID" layoutX="196.0" layoutY="137.0" prefHeight="26.0" prefWidth="82.0" />
+   </children>
+</AnchorPane>
