@@ -6,11 +6,20 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class PlaceOrderController {
+
+    @FXML
+    private AnchorPane PlaceOrderPane;
 
     @FXML
     private DatePicker DatePickerEmployeeDoB1;
@@ -94,7 +103,12 @@ public class PlaceOrderController {
 
     @FXML
     void btnBackOnAction(ActionEvent event) {
-
+        Stage stage = (Stage) PlaceOrderPane.getScene().getWindow();
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/AdminPage.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML

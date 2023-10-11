@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SupplierRegistrationController">
+<AnchorPane fx:id="SupplierRegistrationPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SupplierRegistrationController">
    <children>
       <ImageView fitHeight="602.0" fitWidth="900.0" layoutY="-1.0">
          <image>

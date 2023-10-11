@@ -3,8 +3,11 @@ package controller;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.layout.AnchorPane;
 
 public class EmployeePageController {
+    @FXML
+    private AnchorPane EmployeeRegistrationPane;
 
     @FXML
     private JFXButton btnEmployee;

@@ -5,9 +5,17 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class ProductRegistrationController {
+    @FXML
+    private AnchorPane ProductRegistrationPane;
 
     @FXML
     private JFXButton btnBack;
@@ -47,7 +55,12 @@ public class ProductRegistrationController {
 
     @FXML
     void btnBackOnAction(ActionEvent event) {
-
+        Stage stage = (Stage) ProductRegistrationPane.getScene().getWindow();
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/AdminPage.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML
