@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OrderDetailsController">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="900.0" layoutY="3.0">
+         <image>
+            <Image url="@../img/Order_Details.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#9dffff" height="488.0" layoutX="45.0" layoutY="85.0" opacity="0.76" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0" width="833.0" />
+      <ImageView fitHeight="56.0" fitWidth="200.0" layoutX="350.0" layoutY="14.0">
+         <image>
+            <Image url="@../img/LogoS001-1.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="382.0" layoutY="89.0" text="Order Details" textFill="#505050">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnBack" buttonType="RAISED" layoutX="781.0" layoutY="103.0" onAction="#btnBackOnAction" prefHeight="24.0" prefWidth="74.0" ripplerFill="WHITE" style="-fx-background-color: #A710BF; -fx-background-radius: 20;" text="Back" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="9.0" />
+         </font>
+         <effect>
+            <Shadow>
+               <color>
+                  <Color red="0.7411764860153198" blue="1.0" />
+               </color>
+            </Shadow>
+         </effect>
+      </JFXButton>
+      <Label layoutX="66.0" layoutY="148.0" text="Order ID :" textFill="#505050">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtOrderID" layoutX="134.0" layoutY="144.0" prefHeight="18.0" prefWidth="170.0" unFocusColor="WHITE" />
+      <JFXButton fx:id="btnClear" buttonType="RAISED" layoutX="328.0" layoutY="145.0" onAction="#btnClearOnAction" prefHeight="26.0" prefWidth="70.0" ripplerFill="WHITE" style="-fx-background-color: #1080BF;" text="Clear" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnReturn" buttonType="RAISED" layoutX="412.0" layoutY="145.0" onAction="#btnReturnOnAction" prefHeight="26.0" prefWidth="70.0" ripplerFill="WHITE" style="-fx-background-color: #BF103A;" text="Return" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXTreeTableView layoutX="66.0" layoutY="194.0" prefHeight="358.0" prefWidth="787.0" />
+   </children>
+</AnchorPane>
