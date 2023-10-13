@@ -129,4 +129,12 @@ public class AdminPageController implements Initializable {
     }
 
 
+    public void btnInventoryOnActon(ActionEvent actionEvent) {
+        Stage stage = (Stage) AdminPane.getScene().getWindow();
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/InventoryManagement.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

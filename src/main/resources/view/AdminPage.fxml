@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="AdminPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminPageController">
+<AnchorPane fx:id="AdminPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminPageController">
    <children>
       <ImageView fitHeight="601.0" fitWidth="900.0" layoutY="-1.0">
          <image>
@@ -33,7 +33,7 @@
             </Shadow>
          </effect>
       </JFXButton>
-      <JFXButton fx:id="btnItem" buttonType="RAISED" layoutX="279.0" layoutY="169.0" onAction="#btnItemOnActon" prefHeight="38.0" prefWidth="130.0" ripplerFill="#bd00ff" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Item" textFill="#505050">
+      <JFXButton fx:id="btnItem" buttonType="RAISED" layoutX="279.0" layoutY="165.0" onAction="#btnItemOnActon" prefHeight="38.0" prefWidth="130.0" ripplerFill="#bd00ff" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Item" textFill="#505050">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -48,7 +48,7 @@
             </Shadow>
          </effect>
       </JFXButton>
-      <JFXButton fx:id="btnEmployee" buttonType="RAISED" layoutX="279.0" layoutY="230.0" onAction="#btnEmployeeOnActon" prefHeight="38.0" prefWidth="130.0" ripplerFill="#bd00ff" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Employee" textFill="#505050">
+      <JFXButton fx:id="btnEmployee" buttonType="RAISED" layoutX="279.0" layoutY="275.0" onAction="#btnEmployeeOnActon" prefHeight="38.0" prefWidth="130.0" ripplerFill="#bd00ff" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Employee" textFill="#505050">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -63,7 +63,7 @@
             </Shadow>
          </effect>
       </JFXButton>
-      <JFXButton fx:id="btnSupplier" buttonType="RAISED" layoutX="279.0" layoutY="295.0" onAction="#btnSupplierOnActon" prefHeight="38.0" prefWidth="130.0" ripplerFill="#bd00ff" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Suppliers" textFill="#505050">
+      <JFXButton fx:id="btnSupplier" buttonType="RAISED" layoutX="279.0" layoutY="330.0" onAction="#btnSupplierOnActon" prefHeight="38.0" prefWidth="130.0" ripplerFill="#bd00ff" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Suppliers" textFill="#505050">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -78,7 +78,7 @@
             </Shadow>
          </effect>
       </JFXButton>
-      <JFXButton fx:id="btnOrderDetails" buttonType="RAISED" layoutX="279.0" layoutY="359.0" onAction="#btnOrderDetailsOnActon" prefHeight="38.0" prefWidth="130.0" ripplerFill="#bd00ff" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Orders Details" textFill="#505050">
+      <JFXButton fx:id="btnOrderDetails" buttonType="RAISED" layoutX="279.0" layoutY="383.0" onAction="#btnOrderDetailsOnActon" prefHeight="38.0" prefWidth="130.0" ripplerFill="#bd00ff" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Orders Details" textFill="#505050">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -93,7 +93,7 @@
             </Shadow>
          </effect>
       </JFXButton>
-      <JFXButton fx:id="btnReturnSales" buttonType="RAISED" layoutX="279.0" layoutY="420.0" onAction="#btnReturnSalesOnActon" prefHeight="38.0" prefWidth="130.0" ripplerFill="#bd00ff" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Return Sales" textFill="#505050">
+      <JFXButton fx:id="btnReturnSales" buttonType="RAISED" layoutX="279.0" layoutY="436.0" onAction="#btnReturnSalesOnActon" prefHeight="38.0" prefWidth="130.0" ripplerFill="#bd00ff" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Return Sales" textFill="#505050">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -108,7 +108,7 @@
             </Shadow>
          </effect>
       </JFXButton>
-      <JFXButton fx:id="btnSalesReport" buttonType="RAISED" layoutX="279.0" layoutY="478.0" onAction="#btnSalesReportOnActon" prefHeight="38.0" prefWidth="130.0" ripplerFill="#bd00ff" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Sales Report" textFill="#505050">
+      <JFXButton fx:id="btnSalesReport" buttonType="RAISED" layoutX="279.0" layoutY="489.0" onAction="#btnSalesReportOnActon" prefHeight="38.0" prefWidth="130.0" ripplerFill="#bd00ff" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Sales Report" textFill="#505050">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -129,6 +129,21 @@
          </cursor>
          <font>
             <Font name="System Bold" size="9.0" />
+         </font>
+         <effect>
+            <Shadow>
+               <color>
+                  <Color red="0.7411764860153198" blue="1.0" />
+               </color>
+            </Shadow>
+         </effect>
+      </JFXButton>
+      <JFXButton fx:id="btnInventory" buttonType="RAISED" layoutX="279.0" layoutY="219.0" onAction="#btnInventoryOnActon" prefHeight="38.0" prefWidth="130.0" ripplerFill="#bd00ff" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Inventory" textFill="#505050">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="14.0" />
          </font>
          <effect>
             <Shadow>
