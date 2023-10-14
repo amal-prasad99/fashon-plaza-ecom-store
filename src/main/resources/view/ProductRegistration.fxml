@@ -55,7 +55,6 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtProductSize" layoutX="552.0" layoutY="201.0" prefHeight="26.0" prefWidth="170.0" unFocusColor="WHITE" />
       <JFXTreeTableView fx:id="tblProduct" layoutX="78.0" layoutY="325.0" prefHeight="224.0" prefWidth="762.0">
          <columns>
             <TreeTableColumn fx:id="colID" prefWidth="80.79998779296875" text="ID" />
@@ -118,5 +117,6 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
+      <JFXComboBox fx:id="cmbProductSize" layoutX="552.0" layoutY="202.0" prefHeight="26.0" prefWidth="99.0" />
    </children>
 </AnchorPane>

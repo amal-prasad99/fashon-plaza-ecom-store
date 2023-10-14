@@ -46,8 +46,6 @@ b
 2src/main/java/controller/PlaceOrderController.java,1\a\1ac5e1a4fb9a2152ee6d8a7a22010edf5e1c72b9
 c
 3src/main/java/controller/SalesReturnController.java,1\0\10e087df399c020c73b5fa1672b9da0912ba2313
-h
-8src/main/java/controller/UserRegistrationController.java,a\3\a3c4e075fc698b3f44de824e39e62c87fefc6d5d
 Å
 Q.idea/sonarlint/securityhotspotstore/1/a/1ac5e1a4fb9a2152ee6d8a7a22010edf5e1c72b9,2\0\20054296b58907325e5e29cff9d796b085f64b9e
 Å

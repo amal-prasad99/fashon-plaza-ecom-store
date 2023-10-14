@@ -3,18 +3,27 @@ package controller;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
+import entity.User;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import util.CrudUtil;
 
 import java.io.IOException;
+import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
 
-public class UserRegistrationController {
+public class UserRegistrationController implements Initializable {
 
     @FXML
     private AnchorPane UserRegistrationPane;
@@ -38,7 +47,7 @@ public class UserRegistrationController {
     private CheckBox chkShowUserPassword;
 
     @FXML
-    private JFXComboBox<?> cmbUserType;
+    private JFXComboBox<String> cmbUserType;
 
     @FXML
     private JFXTextField txtAdminName;
@@ -65,7 +74,49 @@ public class UserRegistrationController {
     private Label txtUserPassword;
 
     @FXML
+    private Label lblUserID;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        generateID();
+        loadType();
+    }
+
+    private void loadType(){
+        ObservableList<String> type = FXCollections.observableArrayList("Admin","Employee");
+        cmbUserType.getItems().addAll(type);
+    }
+
+    private void generateID(){
+
+        try {
+            ResultSet resultSet = CrudUtil.execute(
+                    "SELECT user_id FROM user ORDER BY user_id DESC LIMIT 1"
+            );
+
+            if(resultSet.next()){
+                int userID = Integer.parseInt(resultSet.getString(1).split("[E]")[1]);
+                userID++;
+                lblUserID.setText(String.format("E%03d",userID));
+            }else {
+                lblUserID.setText("E001");
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
     void btnAddUserOnAction(ActionEvent event) {
+
+        User user = new User(
+                lblUserID.getText(),
+                cmbUserType.getValue().toString(),
+                txtUserEmail.getText(),
+                txtUserPassword.getText()
+        );
+
 
     }
 
@@ -78,6 +129,8 @@ public class UserRegistrationController {
             throw new RuntimeException(e);
         }
     }
+
+
 
     @FXML
     void btnCheckOnAction(ActionEvent event) {
@@ -98,5 +151,6 @@ public class UserRegistrationController {
     void chkShowUserPasswordOnAction(ActionEvent event) {
 
     }
+
 
 }

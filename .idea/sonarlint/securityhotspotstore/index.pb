@@ -38,8 +38,6 @@ a
 1src/main/java/controller/LogInPageController.java,a\4\a459e3f0cdd04e83f36792817ad4537c38d3df74
 l
 <src/main/java/controller/EmployeeRegistrationController.java,d\d\dd03be7f44fef4c00096ee1f0db7bc1884ceeb8b
-h
-8src/main/java/controller/UserRegistrationController.java,a\3\a3c4e075fc698b3f44de824e39e62c87fefc6d5d
 b
 2src/main/java/controller/PlaceOrderController.java,1\a\1ac5e1a4fb9a2152ee6d8a7a22010edf5e1c72b9
 d
