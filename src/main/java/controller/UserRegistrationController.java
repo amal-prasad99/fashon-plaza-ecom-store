@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
@@ -68,10 +69,7 @@ public class UserRegistrationController implements Initializable {
     private JFXTextField txtUserName;
 
     @FXML
-    private JFXTextField txtUserName31;
-
-    @FXML
-    private Label txtUserPassword;
+    private JFXTextField txtUserPassword;
 
     @FXML
     private Label lblUserID;
@@ -81,6 +79,13 @@ public class UserRegistrationController implements Initializable {
 
         generateID();
         loadType();
+    }
+
+    private void clearFields(){
+        txtUserPassword.clear();
+        txtUserConformPassword.clear();
+        txtUserEmail.clear();
+        cmbUserType.setValue("");
     }
 
     private void loadType(){
@@ -114,8 +119,29 @@ public class UserRegistrationController implements Initializable {
                 lblUserID.getText(),
                 cmbUserType.getValue().toString(),
                 txtUserEmail.getText(),
-                txtUserPassword.getText()
+                txtUserConformPassword.getText()
         );
+
+        try {
+            Boolean isSaved = CrudUtil.execute(
+                    "INSERT INTO user VALUES(?,?,?,?)",
+                    user.getUserID(),
+                    user.getUserType(),
+                    user.getOtpEmail(),
+                    user.getUserPassword()
+            );
+
+            if(isSaved){
+                new Alert(Alert.AlertType.INFORMATION,"User Registration successful...!").show();
+                generateID();
+                clearFields();
+            }else {
+                new Alert(Alert.AlertType.ERROR,"User Registration unsuccesful...!").show();
+            }
+
+        } catch (SQLException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
 
 
     }

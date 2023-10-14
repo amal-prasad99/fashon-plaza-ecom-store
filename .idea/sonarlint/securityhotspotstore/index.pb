@@ -34,8 +34,6 @@ c
 3src/main/java/controller/SalesReturnController.java,1\0\10e087df399c020c73b5fa1672b9da0912ba2313
 k
 ;src/main/java/controller/InventoryManagementController.java,0\5\055f1ad2720cf9741daf18590f3e688a74e13def
-a
-1src/main/java/controller/LogInPageController.java,a\4\a459e3f0cdd04e83f36792817ad4537c38d3df74
 l
 <src/main/java/controller/EmployeeRegistrationController.java,d\d\dd03be7f44fef4c00096ee1f0db7bc1884ceeb8b
 b
