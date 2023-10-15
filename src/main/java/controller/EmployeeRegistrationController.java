@@ -11,10 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TreeItem;
-import javafx.scene.control.TreeTableColumn;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.TreeItemPropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -28,6 +25,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class EmployeeRegistrationController implements Initializable {
@@ -267,7 +265,33 @@ public class EmployeeRegistrationController implements Initializable {
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
+        Optional<ButtonType> buttonType = new Alert(Alert.AlertType.CONFIRMATION,"Do you want to delete this Employee",
+                ButtonType.YES, ButtonType.NO).showAndWait();
+        if(buttonType.get() == ButtonType.YES){
 
+            try {
+                Boolean isDeletedEmp = CrudUtil.execute(
+                        "DELETE FROM employee WHERE employee_id=?",
+                        cmbEmployeeID.getValue().toString()
+                );
+
+                Boolean isDeletedUsr = CrudUtil.execute(
+                        "DELETE FROM user WHERE user_id=?",
+                        cmbEmployeeID.getValue().toString()
+                );
+
+                if (isDeletedEmp && isDeletedUsr){
+                    new Alert(Alert.AlertType.INFORMATION,"Employee Deleted...!").show();
+                    clearFields();
+                    loadTable();
+                }else {
+                    new Alert(Alert.AlertType.INFORMATION,"Customer not Deleted...!").show();
+                }
+
+            } catch (SQLException | ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
     @FXML
