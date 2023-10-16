@@ -6,6 +6,7 @@
 <?import com.jfoenix.controls.JFXTreeTableView?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TreeTableColumn?>
 <?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -14,7 +15,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="InventoryManagementPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InventoryManagementController">
+<AnchorPane fx:id="InventoryManagementPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InventoryManagementController">
    <children>
       <ImageView fitHeight="600.0" fitWidth="900.0">
          <image>
@@ -37,7 +38,17 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <JFXTreeTableView layoutX="59.0" layoutY="333.0" prefHeight="224.0" prefWidth="762.0" />
+      <JFXTreeTableView fx:id="tblInventory" layoutX="59.0" layoutY="333.0" prefHeight="224.0" prefWidth="762.0">
+         <columns>
+            <TreeTableColumn fx:id="colInventoryID" prefWidth="64.80001831054688" text="ID" />
+            <TreeTableColumn fx:id="colProductID" prefWidth="85.59996795654297" text="ProductID" />
+            <TreeTableColumn fx:id="colSupplierID" prefWidth="84.800048828125" text="SupplierID" />
+            <TreeTableColumn fx:id="colQtyOnHand" prefWidth="99.199951171875" text="QTY Hand" />
+            <TreeTableColumn fx:id="colQtySupplied" prefWidth="104.79998779296875" text="QTY Supplied" />
+            <TreeTableColumn fx:id="colSellPrice" prefWidth="115.20004272460938" text="Selling Price" />
+            <TreeTableColumn fx:id="colBuyingPrice" prefWidth="112.79998779296875" text="Buying Price" />
+            <TreeTableColumn fx:id="colOption" prefWidth="100.800048828125" text="Option" />
+         </columns></JFXTreeTableView>
       <Label layoutX="60.0" layoutY="296.0" text="Search :" textFill="#505050">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -69,7 +80,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <JFXComboBox fx:id="cmbProductID" layoutX="184.0" layoutY="185.0" prefHeight="26.0" prefWidth="82.0" />
+      <JFXComboBox fx:id="cmbProductID" layoutX="184.0" layoutY="185.0" onAction="#cmbProductIDOnAction" prefHeight="26.0" prefWidth="82.0" />
       <JFXButton fx:id="btnBack" buttonType="RAISED" layoutX="736.0" layoutY="130.0" onAction="#btnBackOnAction" prefHeight="24.0" prefWidth="74.0" ripplerFill="WHITE" style="-fx-background-color: #A710BF; -fx-background-radius: 20;" text="Back" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
@@ -110,5 +121,11 @@
       </Label>
       <JFXComboBox fx:id="cmbSupplierID" layoutX="536.0" layoutY="185.0" prefHeight="26.0" prefWidth="82.0" />
       <JFXTextField fx:id="txtQtyOnHand" layoutX="182.0" layoutY="218.0" prefHeight="26.0" prefWidth="170.0" unFocusColor="WHITE" />
+      <Label layoutX="60.0" layoutY="155.0" text="Inventory ID :" textFill="#505050">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblInventoryID" layoutX="186.0" layoutY="150.0" prefHeight="26.0" prefWidth="78.0" text="I006" />
    </children>
 </AnchorPane>

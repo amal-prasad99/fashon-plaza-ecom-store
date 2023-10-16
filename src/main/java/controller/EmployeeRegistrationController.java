@@ -152,7 +152,6 @@ public class EmployeeRegistrationController implements Initializable {
         txtEmployeeFirstName.setText(selectedTreeItem.getValue().getEmployeeFirstName());
         txtEmployeeLastName.setText(selectedTreeItem.getValue().getEmployeeLastName());
         txtEmployeeAddress.setText(selectedTreeItem.getValue().getEmployeeAddress());
-//        DateTimeFormatter.ofPattern(selectedTreeItem.getValue().getEmployeeDoB().toString());
         txtEmployeeEmail.setText(selectedTreeItem.getValue().getEmployeeEmail());
         txtEmployeeAccountNo.setText(selectedTreeItem.getValue().getEmployeeAccount());
         txtEmployeeBranchName.setText(selectedTreeItem.getValue().getEmployeeBranch());
@@ -241,7 +240,6 @@ public class EmployeeRegistrationController implements Initializable {
         DatePickerEmployeeDoB.getEditor().clear();
 
     }
-
 
     private void loadTitle(){
         ObservableList<String> title = FXCollections.observableArrayList("Mr","Mrs");
