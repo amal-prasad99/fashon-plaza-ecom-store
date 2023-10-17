@@ -115,8 +115,22 @@ public class InventoryManagementController implements Initializable {
         colQtySupplied.setCellValueFactory(new TreeItemPropertyValueFactory<>("qtySupplied"));
         colSellPrice.setCellValueFactory(new TreeItemPropertyValueFactory<>("sellingPrice"));
         colBuyingPrice.setCellValueFactory(new TreeItemPropertyValueFactory<>("buyingPrice"));
-        colOption.setCellValueFactory(new TreeItemPropertyValueFactory<>("btnOption"));
+//        colOption.setCellValueFactory(new TreeItemPropertyValueFactory<>("btnOption"));
 
+
+
+
+
+
+        selectTableRow();
+        loadProductId();
+        loadSupplierID();
+        generateInventoryID();
+        loadTable();
+    }
+
+
+    private void selectTableRow(){
         tblInventory.getSelectionModel().selectedIndexProperty().addListener((observableValue, oldValue, newValue)->{
             if (newValue!=null){
                 int selectedIndex = newValue.intValue();
@@ -128,12 +142,8 @@ public class InventoryManagementController implements Initializable {
             }
         });
 
-
-        loadProductId();
-        loadSupplierID();
-        generateInventoryID();
-        loadTable();
     }
+
 
     private void setData(TreeItem<InventoryTm> selectedTreeItem) {
         lblInventoryID.setText(selectedTreeItem.getValue().getInventoryID());
@@ -279,7 +289,7 @@ public class InventoryManagementController implements Initializable {
 
     @FXML
     void btnClearOnAction(ActionEvent event) {
-
+        clearFields();
     }
 
     @FXML
@@ -302,12 +312,25 @@ public class InventoryManagementController implements Initializable {
     }
 
     private void deleteInventoryRecord(Inventory inventory) {
-
+        loadTable();
         Optional<ButtonType> buttonType = new Alert(Alert.AlertType.CONFIRMATION,
                 "Do you want to delete this record? ",ButtonType.YES,ButtonType.NO).showAndWait();
         if (buttonType.get()==ButtonType.YES){
 
             try {
+//              Reduce supplied qty from on hand qty
+                int suppliedQty = Integer.parseInt(txtQtySupplied.getText());
+                int onHandQty = Integer.parseInt(txtQtyOnHand.getText());
+                int remaningQty = onHandQty-suppliedQty;
+
+                System.out.println(remaningQty);
+
+                Boolean isQtyReduced = CrudUtil.execute(
+                        "UPDATE inventory SET qty_hand = "+remaningQty+" WHERE product_id = ?",
+                        inventory.getInventoryID()
+                );
+
+
                 Boolean isDeleted = CrudUtil.execute(
                         "DELETE FROM inventory WHERE inventory_id=?",
                         inventory.getInventoryID()
@@ -393,8 +416,7 @@ public class InventoryManagementController implements Initializable {
 
         txtQtyOnHand.setText(String.valueOf(totalQtyOnHand));
 
-        ResultSet resultSet1 = CrudUtil.execute(
-//                "UPDATE qty_hand FROM inventory WHERE product_id=?",
+        Boolean istotalQtyUpdated = CrudUtil.execute(
                 "UPDATE inventory SET qty_hand = "+totalQtyOnHand+" WHERE product_id = ?",
                 cmbProductID.getValue().toString()
         );
